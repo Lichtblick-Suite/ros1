@@ -90,7 +90,11 @@ describe("TcpConnection", () => {
     connection.close();
     await new Promise<void>((resolve, reject) =>
       server.close((err) => {
-        err != undefined ? reject(err) : resolve();
+        if (err != undefined) {
+          reject(err);
+        } else {
+          resolve();
+        }
       }),
     );
   });
