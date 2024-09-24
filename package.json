@@ -21,7 +21,7 @@
     "name": "Lichtblick",
     "email": "lichtblick@bmwgroup.com"
   },
-  "homepage": "https://github.com/lichtblick/ros1",
+  "homepage": "https://github.com/lichtblick-suite/ros1",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "exports": {
