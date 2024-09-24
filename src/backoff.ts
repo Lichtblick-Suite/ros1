@@ -19,7 +19,7 @@ export async function backoff(
   maxJitterMs = 1000,
   rng: () => number = Math.random,
 ): Promise<void> {
-  return await new Promise((resolve) =>
+  await new Promise((resolve) =>
     setTimeout(resolve, backoffTime(retries, maxMs, maxJitterMs, rng)),
   );
 }

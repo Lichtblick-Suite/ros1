@@ -1,6 +1,6 @@
-import { MessageDefinition } from "@foxglove/message-definition";
-import { parse as parseMessageDefinition } from "@foxglove/rosmsg";
-import { MessageReader } from "@foxglove/rosmsg-serialization";
+import { MessageDefinition } from "@lichtblick/message-definition";
+import { parse as parseMessageDefinition } from "@lichtblick/rosmsg";
+import { MessageReader } from "@lichtblick/rosmsg-serialization";
 import { EventEmitter } from "eventemitter3";
 
 import { Connection, ConnectionStats } from "./Connection";
@@ -154,7 +154,7 @@ export class TcpConnection extends EventEmitter<TcpConnectionEvents> implements 
     data.set(serializedHeader, 4);
 
     // Write the length and serialized header payload
-    return await this._socket.write(data);
+    await this._socket.write(data);
   }
 
   // e.g. "TCPROS connection on port 59746 to [host:34318 on socket 11]"

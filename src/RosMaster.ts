@@ -93,7 +93,7 @@ export class RosMaster {
     if (!this._services.has(service)) {
       this._services.set(service, new Map<string, string>());
     }
-    const serviceProviders = this._services.get(service) as Map<string, string>;
+    const serviceProviders = this._services.get(service)!;
 
     serviceProviders.set(callerId, serviceApi);
     this._nodes.set(callerId, callerApi);
@@ -145,7 +145,7 @@ export class RosMaster {
     if (!this._subscriptions.has(topic)) {
       this._subscriptions.set(topic, new Set<string>());
     }
-    const subscribers = this._subscriptions.get(topic) as Set<string>;
+    const subscribers = this._subscriptions.get(topic)!;
     subscribers.add(callerId);
 
     this._nodes.set(callerId, callerApi);
@@ -202,7 +202,7 @@ export class RosMaster {
     if (!this._publications.has(topic)) {
       this._publications.set(topic, new Set<string>());
     }
-    const publishers = this._publications.get(topic) as Set<string>;
+    const publishers = this._publications.get(topic)!;
     publishers.add(callerId);
 
     this._topics.set(topic, topicType);
@@ -450,7 +450,7 @@ export class RosMaster {
     if (!this._paramSubscriptions.has(key)) {
       this._paramSubscriptions.set(key, new Map<string, string>());
     }
-    const subscriptions = this._paramSubscriptions.get(key) as Map<string, string>;
+    const subscriptions = this._paramSubscriptions.get(key)!;
 
     subscriptions.set(callerId, callerApi);
 

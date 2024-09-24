@@ -181,7 +181,8 @@ export class TcpClient extends EventEmitter<TcpClientEvents> implements Client {
       this._log?.warn?.(
         `tcp client ${this.toString()} sent incomplete header. topic="${topic}", type="${dataType}", callerid="${destinationCallerId}"`,
       );
-      return this.close();
+      this.close();
+      return;
     }
 
     // Check if we are publishing this topic
@@ -190,7 +191,8 @@ export class TcpClient extends EventEmitter<TcpClientEvents> implements Client {
       this._log?.warn?.(
         `tcp client ${this.toString()} attempted to subscribe to unadvertised topic ${topic}`,
       );
-      return this.close();
+      this.close();
+      return;
     }
 
     this._stats.bytesReceived += msgData.byteLength;
@@ -202,7 +204,8 @@ export class TcpClient extends EventEmitter<TcpClientEvents> implements Client {
           pub.dataType
         }"`,
       );
-      return this.close();
+      this.close();
+      return;
     }
 
     // Check the md5sum matches
@@ -212,7 +215,8 @@ export class TcpClient extends EventEmitter<TcpClientEvents> implements Client {
           pub.md5sum
         }"`,
       );
-      return this.close();
+      this.close();
+      return;
     }
 
     // Write the response header

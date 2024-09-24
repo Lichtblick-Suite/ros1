@@ -1,11 +1,11 @@
-import { MessageDefinition } from "@foxglove/message-definition";
+import { HttpServer, XmlRpcFault, XmlRpcValue } from "@foxglove/xmlrpc";
+import { MessageDefinition } from "@lichtblick/message-definition";
 import {
   parse as parseMessageDefinition,
   md5 as rosMsgMd5sum,
   stringify as rosMsgDefinitionText,
-} from "@foxglove/rosmsg";
-import { MessageWriter } from "@foxglove/rosmsg-serialization";
-import { HttpServer, XmlRpcFault, XmlRpcValue } from "@foxglove/xmlrpc";
+} from "@lichtblick/rosmsg";
+import { MessageWriter } from "@lichtblick/rosmsg-serialization";
 import { EventEmitter } from "eventemitter3";
 
 import { Client } from "./Client";
@@ -241,7 +241,7 @@ export class RosNode extends EventEmitter<RosNodeEvents> {
       throw new Error(`Cannot publish to unadvertised topic "${topic}"`);
     }
 
-    return await this._tcpPublisher.publish(publication, message);
+    await this._tcpPublisher.publish(publication, message);
   }
 
   isSubscribedTo(topic: string): boolean {
@@ -374,14 +374,14 @@ export class RosNode extends EventEmitter<RosNodeEvents> {
 
     // Update the local map of all subscribed parameters
     for (let i = 0; i < keys.length; i++) {
-      const key = keys[i] as string;
+      const key = keys[i]!;
       const entry = res[i];
       if (entry instanceof XmlRpcFault) {
         this._log?.warn?.(`subscribeAllParams faulted on "${key}" (${entry})`);
         this.emit("error", new Error(`subscribeAllParams faulted on "${key}" (${entry})`));
         continue;
       }
-      const [status, msg, value] = entry as RosXmlRpcResponse;
+      const [status, msg, value] = entry!;
       if (status !== OK) {
         this._log?.warn?.(`subscribeAllParams not ok for "${key}" (status=${status}): ${msg}`);
         this.emit(
@@ -568,7 +568,8 @@ export class RosNode extends EventEmitter<RosNodeEvents> {
         "error",
         new Error(`${client.toString()} connected to non-published topic ${topic}`),
       );
-      return client.close();
+      client.close();
+      return;
     }
 
     this._log?.info?.(
@@ -702,7 +703,9 @@ export class RosNode extends EventEmitter<RosNodeEvents> {
     // Register with each publisher. Any failures communicating with individual node XML-RPC servers
     // or TCP sockets will be caught and retried
     await Promise.allSettled(
-      publishers.map(async (pubUrl) => await this._subscribeToPublisher(pubUrl, subscription)),
+      publishers.map(async (pubUrl) => {
+        await this._subscribeToPublisher(pubUrl, subscription);
+      }),
     );
   }
 

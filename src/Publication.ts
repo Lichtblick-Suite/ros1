@@ -1,5 +1,5 @@
-import { MessageDefinition } from "@foxglove/message-definition";
-import { MessageWriter } from "@foxglove/rosmsg-serialization";
+import { MessageDefinition } from "@lichtblick/message-definition";
+import { MessageWriter } from "@lichtblick/rosmsg-serialization";
 
 import { Client } from "./Client";
 import { SubscriberLink } from "./SubscriberLink";

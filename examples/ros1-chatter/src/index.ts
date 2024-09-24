@@ -1,4 +1,4 @@
-import { RosNode } from "@foxglove/ros1";
+import { RosNode } from "@lichtblick/ros1";
 import {
   TcpServerNode,
   TcpSocketNode,
@@ -6,7 +6,7 @@ import {
   getPid,
   getHostname,
   getNetworkInterfaces,
-} from "@foxglove/ros1/nodejs";
+} from "@lichtblick/ros1/nodejs";
 import { HttpServerNodejs } from "@foxglove/xmlrpc/nodejs";
 
 async function main() {
