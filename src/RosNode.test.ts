@@ -18,7 +18,7 @@ describe("RosNode", () => {
 
     const nodeA = new RosNode({
       name: "/nodeA",
-      hostname: "localhost",
+      hostname: "0.0.0.0",
       pid: 1,
       rosMasterUri,
       httpServer: new HttpServerNodejs(),
@@ -30,7 +30,7 @@ describe("RosNode", () => {
 
     const nodeB = new RosNode({
       name: "/nodeB",
-      hostname: "localhost",
+      hostname: "0.0.0.0",
       pid: 2,
       rosMasterUri,
       httpServer: new HttpServerNodejs(),
