@@ -1,4 +1,4 @@
-import { HttpServerNodejs } from "@foxglove/xmlrpc/nodejs";
+import { HttpServerNodejs } from "@lichtblick/xmlrpc/nodejs";
 
 import { PublisherLink } from "./PublisherLink";
 import { RosMaster } from "./RosMaster";

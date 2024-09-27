@@ -1,4 +1,3 @@
-import { HttpServer, XmlRpcFault, XmlRpcValue } from "@foxglove/xmlrpc";
 import { MessageDefinition } from "@lichtblick/message-definition";
 import {
   parse as parseMessageDefinition,
@@ -6,6 +5,7 @@ import {
   stringify as rosMsgDefinitionText,
 } from "@lichtblick/rosmsg";
 import { MessageWriter } from "@lichtblick/rosmsg-serialization";
+import { HttpServer, XmlRpcFault, XmlRpcValue } from "@lichtblick/xmlrpc";
 import { EventEmitter } from "eventemitter3";
 
 import { Client } from "./Client";

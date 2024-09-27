@@ -6,13 +6,13 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/lichtblick-suite/ros1.git"
+    "url": "https://github.com/Lichtblick-Suite/ros1"
   },
   "author": {
     "name": "Lichtblick",
     "email": "lichtblick@bmwgroup.com"
   },
-  "homepage": "https://github.com/lichtblick-suite/ros1",
+  "homepage": "https://github.com/Lichtblick-Suite/",
   "main": "dist/index.js",
   "files": [
     "dist"

@@ -11,7 +11,7 @@
 
 import { RosNode } from "@lichtblick/ros1";
 import { getEnvVar, getHostname, getNetworkInterfaces, getPid, TcpSocketNode } from "@lichtblick/ros1/nodejs";
-import { HttpServerNodejs } from "@foxglove/xmlrpc/nodejs";
+import { HttpServerNodejs } from "@lichtblick/xmlrpc/nodejs";
 
 async function main() {
   const name = "/testclient";

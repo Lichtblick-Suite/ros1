@@ -818,16 +818,6 @@
     data-uri-to-buffer "^3.0.1"
     fetch-blob "^2.1.1"
 
-"@foxglove/xmlrpc@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@foxglove/xmlrpc/-/xmlrpc-1.3.0.tgz#37c3054066a0556858244881f6aa631a794cf6fb"
-  integrity sha512-L9S4wrrUh83BycDmQAOTR2oY6PUXW9pCdT8rMIRLkxsdY4hwOpTc9lkeQDg3kO1OjHfiTHfUagvnzXIsMSmsYQ==
-  dependencies:
-    "@foxglove/just-fetch" "^1.2.4"
-    byte-base64 "^1.1.0"
-    sax "^1.2.4"
-    xmlbuilder2 "^3.0.2"
-
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.14"
   resolved "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.11.14.tgz#d78e481a039f7566ecc9660b4ea7fe6b1fec442b"
@@ -1178,6 +1168,16 @@
   integrity sha512-gzSHMuoX2gfWv8i+zMqiMf6aN1ASueSwJcVFV6RbgLNik/tG8EKkKs4vUl8593sEOMDjC9kQJdpQ8xxCU5XDZw==
   dependencies:
     md5-typescript "^1.0.5"
+
+"@lichtblick/xmlrpc@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@lichtblick/xmlrpc/-/xmlrpc-1.0.0.tgz#e096c5a57fc53300de76e2673cb77a73acc6af8c"
+  integrity sha512-FeYoxKK4038IUhcSgwQc3rYlC2vmiwsGQp0wx3zcJt4xdCqzwZAHMzBbPCRbRwMtHhY8iXAS9nYaEPCQXKxJ7g==
+  dependencies:
+    "@foxglove/just-fetch" "^1.2.4"
+    byte-base64 "^1.1.0"
+    sax "^1.2.4"
+    xmlbuilder2 "^3.0.2"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"

@@ -6,7 +6,7 @@ import {
   getHostname,
   getNetworkInterfaces,
 } from "@lichtblick/ros1/nodejs";
-import { HttpServerNodejs } from "@foxglove/xmlrpc/nodejs";
+import { HttpServerNodejs } from "@lichtblick/xmlrpc/nodejs";
 
 async function main() {
   const name = "/testclient";

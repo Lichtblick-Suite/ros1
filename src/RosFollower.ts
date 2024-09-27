@@ -1,4 +1,4 @@
-import { HttpServer, HttpRequest, XmlRpcServer, XmlRpcValue } from "@foxglove/xmlrpc";
+import { HttpServer, HttpRequest, XmlRpcServer, XmlRpcValue } from "@lichtblick/xmlrpc";
 import { EventEmitter } from "eventemitter3";
 import ipaddr from "ipaddr.js";
 

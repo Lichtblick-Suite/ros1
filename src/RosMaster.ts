@@ -1,4 +1,4 @@
-import { HttpServer, XmlRpcServer, XmlRpcValue } from "@foxglove/xmlrpc";
+import { HttpServer, XmlRpcServer, XmlRpcValue } from "@lichtblick/xmlrpc";
 
 import { LoggerService } from "./LoggerService";
 import { RosFollowerClient } from "./RosFollowerClient";

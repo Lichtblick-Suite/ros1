@@ -1,4 +1,4 @@
-import { HttpHandler, HttpServer } from "@foxglove/xmlrpc";
+import { HttpHandler, HttpServer } from "@lichtblick/xmlrpc";
 
 export class MockHttpServer implements HttpServer {
   handler: HttpHandler = async (_req) => ({ statusCode: 404 });
